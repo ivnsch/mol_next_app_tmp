@@ -1,0 +1,13 @@
+{
+  "name": "wasmhello",
+  "version": "0.1.0",
+  "files": [
+    "wasmhello_bg.wasm",
+    "wasmhello.js",
+    "wasmhello_bg.js",
+    "wasmhello.d.ts"
+  ],
+  "module": "wasmhello.js",
+  "types": "wasmhello.d.ts",
+  "sideEffects": false
+}
