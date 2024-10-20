@@ -30,6 +30,7 @@ export default function RootLayout({
         <body
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
+          <canvas id="bevy" className="game" width={1080} height={720} />
           {children}
         </body>
       </AppContextProvider>
