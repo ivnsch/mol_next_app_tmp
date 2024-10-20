@@ -10,8 +10,8 @@ export default function Page() {
 
   useEffect(() => {
     async function asyncInit() {
-      await wasm?.init_log()
-      await wasm?.init_sim()
+      wasm?.init_log()
+      wasm?.init_sim()
     }
     asyncInit()
   }, [wasm])
