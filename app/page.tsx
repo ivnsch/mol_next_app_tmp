@@ -15,6 +15,13 @@ export default function Page() {
     }
     asyncInit()
   }, [wasm])
+
+  useEffect(() => {
+    import("../wasm/mol").then(() => {
+      console.log("!! Wasm module loaded")
+    })
+  }, [])
+
   useEffect(() => {
     async function asyncInit() {
       console.log(wasm?.greet("aaa"))
