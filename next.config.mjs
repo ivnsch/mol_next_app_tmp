@@ -1,4 +1,4 @@
-export default {
+const nextConfig = {
   webpack: (config, { isServer }) => {
     config.experiments = {
       ...config.experiments,
@@ -7,3 +7,5 @@ export default {
     return config;
   },
 };
+
+export default nextConfig;
