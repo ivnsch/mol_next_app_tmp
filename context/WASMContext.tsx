@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, ReactNode, useEffect, useState } from "react";
+import { createContext, ReactNode, useState } from "react";
 import useEffectOnce from "../hooks/useEffectOnce";
 import { Wasm } from "../type_alias";
 
@@ -16,13 +16,12 @@ export const WASMContextProvider: React.FC<WASMContextProviderProps> = ({
 
   // note: it's important to run this really only once (react has a strict mode which makes it run twice in dev mode),
   // otherwise there can be race conditions that crash the app, see https://github.com/rustwasm/wasm-bindgen/issues/3153
-  //   useEffectOnce(() => {
-  useEffect(() => {
+  useEffectOnce(() => {
     (async () => {
       const wasm: Wasm = await import("../wasm/wasmhello");
       setState({ wasm });
     })();
-  }, []);
+  });
 
   return <WASMContext.Provider value={state}>{children}</WASMContext.Provider>;
 };
