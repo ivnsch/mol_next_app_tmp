@@ -11,7 +11,7 @@ export default function Page() {
   useEffect(() => {
     async function asyncInit() {
       await wasm?.init_log()
-      await wasm?.game123()
+      await wasm?.init_sim()
     }
     asyncInit()
   }, [wasm])
