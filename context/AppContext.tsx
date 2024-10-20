@@ -1,7 +1,6 @@
 "use client"
 
-import React, { createContext, ReactNode, useContext, useEffect } from "react"
-import { WASMContext } from "./WASMContext"
+import React, { createContext, ReactNode } from "react"
 
 const initial: IAppContext = {}
 
@@ -10,19 +9,7 @@ export const AppContext = createContext(initial)
 export const AppContextProvider: React.FC<AppContextProviderProps> = ({
   children,
 }) => {
-  const { wasm } = useContext(WASMContext)
-  useEffect(() => {
-    async function asyncInit() {
-      if (wasm) {
-        // await wasm.initLog();
-      }
-    }
-    asyncInit()
-  }, [wasm])
-
-  const deps = {
-    wasm: wasm,
-  }
+  const deps = { foo: 123 }
   return (
     <AppContext.Provider value={{ deps: deps }}>{children}</AppContext.Provider>
   )
@@ -36,7 +23,7 @@ interface IAppContext {
 }
 
 export interface Deps {
-  wasm: Wasm
+  foo: number
 }
 
 // export type Wasm = typeof import("../wasm/mol");

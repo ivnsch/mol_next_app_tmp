@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import localFont from "next/font/local"
 import "./globals.css"
-import { WASMContextProvider } from "@/context/WASMContext"
 import { AppContextProvider } from "@/context/AppContext"
 
 const geistSans = localFont({
@@ -27,15 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <WASMContextProvider>
-        <AppContextProvider>
-          <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-          >
-            {children}
-          </body>
-        </AppContextProvider>
-      </WASMContextProvider>
+      <AppContextProvider>
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          {children}
+        </body>
+      </AppContextProvider>
     </html>
   )
 }
