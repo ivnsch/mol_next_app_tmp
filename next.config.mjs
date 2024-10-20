@@ -1,5 +1,5 @@
 const nextConfig = {
-  webpack: (config, { isServer }) => {
+  webpack: (config) => {
     config.experiments = {
       ...config.experiments,
       syncWebAssembly: true,
