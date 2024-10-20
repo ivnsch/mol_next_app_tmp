@@ -10,6 +10,13 @@ export default function Page() {
 
   useEffect(() => {
     async function asyncInit() {
+      await wasm?.init_log()
+      await wasm?.game123()
+    }
+    asyncInit()
+  }, [wasm])
+  useEffect(() => {
+    async function asyncInit() {
       console.log(wasm?.greet("aaa"))
       console.log("bears:" + bears)
     }
