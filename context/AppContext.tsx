@@ -26,8 +26,7 @@ export interface Deps {
   foo: number
 }
 
-// export type Wasm = typeof import("../wasm/mol");
-export type Wasm = typeof import("../wasm/wasmhello")
+export type Wasm = typeof import("../wasm/mol")
 
 interface AppContextProviderProps {
   children: ReactNode
