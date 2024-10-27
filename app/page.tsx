@@ -24,7 +24,7 @@ export default function Page() {
 
   useEffect(() => {
     async function asyncInit() {
-      console.log(wasm?.greet("aaa"))
+      //   console.log(wasm?.greet("aaa"))
       console.log("bears:" + bears)
     }
     asyncInit()
