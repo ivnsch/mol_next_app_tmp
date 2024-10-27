@@ -30,5 +30,5 @@ export default function Page() {
     asyncInit()
   }, [wasm, bears])
 
-  return <h1>Hello, Next.js!</h1>
+  return <div />
 }
